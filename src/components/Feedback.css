@@ -1,0 +1,141 @@
+.feedback_container{
+    grid-area: feedback;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    height: 100%;
+    justify-self: center;
+    background-color: white;
+    border-radius: var(--b-radius);
+    border: solid 2px var(--accent);
+    transition: all 2s;
+}
+
+.feedback_container .switch{
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: bold;
+    
+}
+.feedback_container .switch:hover{
+    transform: scale(1.1);
+}
+
+.feedback_main{
+    width: 40vw;
+    display: grid;
+    min-height: 10vh;
+
+    grid-template:
+        "text button submit" auto
+        / 3fr 1fr 1fr;
+    
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    /*transition width and height*/
+    transition-property: width, height, min-height, overflow;
+    transition-duration: 0.5s;
+    margin: 10px;
+}
+
+.feedback_main > *{
+    margin: 5px;
+    transition: opacity 0.5s;
+}
+.feedback_main.vanish {
+    margin: 0;
+}
+.feedback_main.vanish *{
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.feedback_main input{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin: 5px;
+    border-radius: var(--b-radius);
+    border: solid 2px var(--accent);
+}
+
+.feedback_main .button{
+    padding: 5px;
+    border-radius: var(--b-radius);
+    border: solid 2px var(--accent);
+    background-color: white;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    margin: 2px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    font-size: large;
+}
+
+.feedback_main.vanish{
+    width: 0;
+    height: 0 !important;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.feedback_main .like_dislike{
+    display: grid;
+    grid-template:
+        "like dislike" auto
+        / 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.feedback_main .like_dislike .button{
+  aspect-ratio: 1/1;
+}
+
+.feedback_main .button:hover{
+    background-color: var(--accent);
+    color: white;
+}
+
+.feedback_main .button:active{
+    transform: scale(0.9);
+}
+
+.feedback_main .button.selected{
+    background-color: var(--accent);
+    color: white;
+}
+
+.feedback_main .button.selected:hover{
+    background-color: var(--accent);
+    color: gray;
+}
+
+.submit_feedback svg{
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

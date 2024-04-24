@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar{
+  width: 5px;
+}
+
+*::-webkit-scrollbar-thumb{
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track{
+  background: var(--primary-light);
+}
+
+
+:root{
+  --primary-light: #E0DDFF; 
+  --primary: #C3BEFF;
+  --accent: #7569FF;
+  --dark-accent: #8640ff;
+  --b-radius: 10px;
+
+}
+
+html, body, #root{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(90deg, var(--primary-light), var(--primary));
+}
